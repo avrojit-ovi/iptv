@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# Protect cache and includes from direct web access
+RewriteRule ^cache/ - [F,L]
+RewriteRule ^includes/ - [F,L]
+
+# Default document
+DirectoryIndex index.php
+
+# Optional: hide .php extension
+# RewriteCond %{REQUEST_FILENAME} !-d
+# RewriteCond %{REQUEST_FILENAME} !-f
+# RewriteRule ^([^\.]+)$ $1.php [NC,L]
